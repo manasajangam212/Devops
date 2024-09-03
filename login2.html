@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function validateform(){
+            var name = document.forms["Loginform"]["name"].value;
+            var password = document.forms["Loginform"]["password"].value;
+            var nameError = document.getElementById("nameError");
+            var passwordError = document.getElementById("passwordError");
+
+            // Reset previous error messages
+            nameError.textContent = "";
+            passwordError.textContent = "";
+
+            // Validate name
+            if (name == null || name.trim() === ""){
+                nameError.textContent = "Name can't be blank/empty";
+                return false;
+            }
+
+            // Validate password
+            if (password.length < 6){
+                passwordError.textContent = "Password must be at least 6 characters long";
+                return false;
+            }
+
+            // If all validations pass, form submission proceeds
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="Loginform" onsubmit="return validateform()">
+        Name: <input type="text" name="name"> <span id="nameError" style="color: red;"></span><br>
+        Password: <input type="password" name="password"> <span id="passwordError" style="color: red;"></span><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

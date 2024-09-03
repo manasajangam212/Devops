@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Login Integration</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #e0f2f1);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            padding: 2rem;
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        #home {
+            text-align: center;
+        }
+        h1 {
+            color: #0070d2;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: -webkit-linear-gradient(#0070d2, #32cd32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #0070d2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+            margin: 0 auto;
+        }
+        a:hover {
+            background: #005bb5;
+            transform: scale(1.05);
+        }
+        .logo {
+            max-width: 200px;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section id="home">
+            <img src="data:image/png;base64,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" alt="Logo" class="logo">
+            <h1>Welcome to Our Salesforce Service</h1>
+            <p>Click the button below to login to Salesforce.</p>
+            <a href="https://login.salesforce.com/?locale=in">Login to Salesforce</a>
+        </section>
+    </main>
+
+</body>
+</html>
+

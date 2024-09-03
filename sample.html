@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Example</title>
+    <style>
+        html{
+            height: 100%; /* Full height of the viewport */
+            margin: 0;
+        }
+        .parent {
+            height: 100%; /* 100% of the body's height */
+            background-color: lightgray;
+        }
+        .child {
+            height: 50%; /* 50% of the parent's height */
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            This child div takes up 50% of the height of its parent.
+        </div>
+    </div>
+</body>
+</html>
